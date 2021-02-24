@@ -88,8 +88,9 @@ echo "**************************"
 echo -e "\n\n"
 echo " the dockerfile is ready please enter your image name: "
 read IM
+echo
 echo "Now building your image please wait as this can take couple minutes"
-
+echo
 docker rmi $(docker images | grep ${IM}:${NAME} |awk '{print$3}') -f
 docker build -t ${IM}:${NAME} .
 
